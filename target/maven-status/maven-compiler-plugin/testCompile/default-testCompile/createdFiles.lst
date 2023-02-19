@@ -1,0 +1,11 @@
+tests/AccountTest.class
+tests/LoginTest.class
+pages/ForgotPasswordPage.class
+pages/BasePage.class
+pages/ProfilePage.class
+tests/RegisterTest.class
+pages/FeedPage.class
+pages/RegisterPage.class
+pages/LoginPage.class
+pages/MainPage.class
+tests/ConstructorTest.class
