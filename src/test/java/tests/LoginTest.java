@@ -29,7 +29,7 @@ public class LoginTest {
     String loginUrl = "https://stellarburgers.nomoreparties.site/login";
     String accountProfileUrl = "https://stellarburgers.nomoreparties.site/account/profile";
 
-    public void loginUser(){
+    public void loginUser() {
 
         //  Login and get loginValue
         LoginPage loginPage = new LoginPage();
@@ -41,34 +41,34 @@ public class LoginTest {
                 .until(ExpectedConditions.urlMatches(mainPageUrl));
     }
 
-    public void goToAccountPage(){
+    public void goToAccountPage() {
         MainPage page = new MainPage();
         this.driver.findElement(page.getAccountButton()).click();
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(accountProfileUrl));
     }
 
-    public String getCurrentUserLogin(){
+    public String getCurrentUserLogin() {
 
         WebElement inputElem = this.driver.findElement(By.xpath("(//*[contains(text(),'Логин')])/following-sibling::input"));
         String loginValue = inputElem.getAttribute("value");
         return loginValue;
     }
 
-    public void logoutUser(){
+    public void logoutUser() {
         ProfilePage page = new ProfilePage();
         this.driver.findElement(page.getLogoutBtn()).click();
 
     }
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         this.driver = new ChromeDriver();
     }
 
     @Test
-    public void succesGoToLoginPageFromAccountBtn(){
+    public void succesGoToLoginPageFromAccountBtn() {
         String expected = this.existingUserMail;
 
 
@@ -110,7 +110,7 @@ public class LoginTest {
     }
 
     @Test
-    public void succesGoToLoginPageFromRegister(){
+    public void succesGoToLoginPageFromRegister() {
         RegisterPage page = new RegisterPage();
         this.driver.get(registerPageUrl);
 
@@ -130,7 +130,7 @@ public class LoginTest {
     }
 
     @Test
-    public void succesGoToLoginPageFromForgotPasswordPage(){
+    public void succesGoToLoginPageFromForgotPasswordPage() {
         ForgotPasswordPage page = new ForgotPasswordPage();
         this.driver.get(passwordRecoveryUrl);
 
@@ -147,7 +147,7 @@ public class LoginTest {
     }
 
     @Test
-    public void succesLogout(){
+    public void succesLogout() {
         MainPage page = new MainPage();
         this.driver.get(mainPageUrl);
 
@@ -168,7 +168,7 @@ public class LoginTest {
     }
 
     @After
-    public void teardown(){
+    public void teardown() {
         this.driver.quit();
     }
 }

@@ -4,8 +4,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -39,19 +37,13 @@ public class AccountTest {
     String feedUrl = "https://stellarburgers.nomoreparties.site/feed";
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         this.driver = new ChromeDriver();
         this.driver.manage().window().maximize();
     }
 
-
-//    public AccountTest(boolean loginParam){
-//        this.loginParam = loginParam;
-//
-//    }
-
-    public void loginUser(){
+    public void loginUser() {
 
         //  Login and get loginValue
         LoginPage loginPage = new LoginPage();
@@ -63,16 +55,8 @@ public class AccountTest {
                 .until(ExpectedConditions.urlMatches(mainPageUrl));
     }
 
-//    @Parameterized.Parameters
-//    public static Object[][] getLoginData() {
-//        return new Object[][] {
-//                {false},
-//                {true}
-//        };
-//    }
-
     @Test
-    public void goToAccountFromFeedWithLogin(){
+    public void goToAccountFromFeedWithLogin() {
         this.driver.get(loginUrl);
         this.loginUser();
 
@@ -95,7 +79,7 @@ public class AccountTest {
     }
 
     @Test
-    public void goToConstructorFromProfile(){
+    public void goToConstructorFromProfile() {
         this.driver.get(loginUrl);
         this.loginUser();
 
@@ -112,7 +96,7 @@ public class AccountTest {
     }
 
     @Test
-    public void goToConstructorFromProfileViaLogo(){
+    public void goToConstructorFromProfileViaLogo() {
         this.driver.get(loginUrl);
         this.loginUser();
 
@@ -129,14 +113,24 @@ public class AccountTest {
     }
 
     @Test
-    public void goToConstructorFromLogin(){
+    public void goToConstructorFromLogin() {
+        this.driver.get(loginUrl);
 
+        MainPage mainPage = new MainPage();
+        this.driver.findElement(mainPage.getAccountButton()).click();
+
+        ProfilePage profilePage = new ProfilePage();
+        this.driver.findElement(profilePage.getConstructorButton()).click();
+
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.urlMatches(mainPageUrl));
+
+        assertEquals(this.driver.getCurrentUrl(), mainPageUrl);
     }
 
     @Test
-    public void goToAccountFromFeedWithNoLogin(){
+    public void goToAccountFromFeedWithNoLogin() {
         this.driver.get(mainPageUrl);
-
 
         MainPage mainPage = new MainPage();
         this.driver.findElement(mainPage.getFeedPageBtn()).click();
@@ -156,8 +150,7 @@ public class AccountTest {
     }
 
     @Test
-    public void goToAccountFromRegister(){
-        //TO-DO: need disable parametrize
+    public void goToAccountFromRegister() {
 
         this.driver.get(registerPageUrl);
         RegisterPage page = new RegisterPage();
@@ -172,9 +165,7 @@ public class AccountTest {
     }
 
     @Test
-    public void goToAccountFromForgotPasswordPage(){
-        //TO-DO: need disable parametrize
-
+    public void goToAccountFromForgotPasswordPage() {
         this.driver.get(forgotPasswordPage);
         ForgotPasswordPage page = new ForgotPasswordPage();
 
@@ -188,12 +179,25 @@ public class AccountTest {
     }
 
     @Test
-    public void goToConstructorFromAccount(){
+    public void goToConstructorFromAccount() {
+        this.driver.get(loginUrl);
+        this.loginUser();
 
+
+        MainPage mainPage = new MainPage();
+        this.driver.findElement(mainPage.getAccountButton()).click();
+
+        ProfilePage profilePage = new ProfilePage();
+        this.driver.findElement(profilePage.getConstructorButton()).click();
+
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.urlMatches(mainPageUrl));
+
+        assertEquals(this.driver.getCurrentUrl(), mainPageUrl);
     }
 
     @After
-    public void teardown(){
+    public void teardown() {
         this.driver.quit();
     }
 

@@ -23,7 +23,7 @@ public class ConstructorTest {
     String url = "https://stellarburgers.nomoreparties.site";
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         this.driver = new ChromeDriver();
         this.driver.manage().window().maximize();
@@ -32,7 +32,7 @@ public class ConstructorTest {
     }
 
     @Test
-    public void clickOnSauce() throws Exception{
+    public void clickOnSauce() throws Exception {
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(this.driver.findElement(page.getSauseHeader())));
         this.driver.findElement(page.getSauseHeader()).click();
         new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(this.driver.findElement(page.getSauseConstructorHeader())));
@@ -40,7 +40,7 @@ public class ConstructorTest {
     }
 
     @Test
-    public void clickOnBuns() throws Exception{
+    public void clickOnBuns() throws Exception {
 
 
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(this.driver.findElement(page.getSauseHeader())));
@@ -63,7 +63,7 @@ public class ConstructorTest {
     }
 
     @After
-    public void teardown(){
+    public void teardown() {
         this.driver.quit();
     }
 }

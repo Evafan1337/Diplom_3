@@ -21,7 +21,7 @@ public class RegisterTest {
     String url = "https://stellarburgers.nomoreparties.site/register";
     String succesRegisterRedirect = "https://stellarburgers.nomoreparties.site/login";
 
-    public String generateString(){
+    public String generateString() {
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'
         int targetStringLength = 10;
@@ -36,7 +36,7 @@ public class RegisterTest {
     }
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         this.driver = new ChromeDriver();
         driver.get(url);
@@ -44,10 +44,10 @@ public class RegisterTest {
     }
 
     @Test
-    public void successfulRegisterCheck(){
+    public void successfulRegisterCheck() {
 
         String nameValue = this.generateString();
-        String emailValue = this.generateString()+"@mail.ru";
+        String emailValue = this.generateString() + "@mail.ru";
         String passwordValue = "123456";
 
         new WebDriverWait(driver, 3)
@@ -66,10 +66,10 @@ public class RegisterTest {
     }
 
     @Test
-    public void failRegisterWithShortPassword(){
+    public void failRegisterWithShortPassword() {
 
         String nameValue = this.generateString();
-        String emailValue = this.generateString()+"@mail.ru";
+        String emailValue = this.generateString() + "@mail.ru";
         String passwordValue = "111";
 
         driver.findElement(page.getNameInput()).sendKeys(nameValue);
@@ -82,7 +82,7 @@ public class RegisterTest {
     }
 
     @After
-    public void teardown(){
+    public void teardown() {
         this.driver.quit();
     }
 }
