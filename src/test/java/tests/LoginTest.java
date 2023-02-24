@@ -76,7 +76,7 @@ public class LoginTest {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(page.getGoToAccountButton()));
         this.driver.findElement(page.getGoToAccountButton()).click();
-        assert this.driver.getCurrentUrl().equals(this.loginUrl);
+        assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
         this.loginUser();
         this.goToAccountPage();
@@ -95,7 +95,7 @@ public class LoginTest {
 
         this.driver.findElement(page.getAccountButton()).click();
 
-        assert this.driver.getCurrentUrl().equals(this.loginUrl);
+        assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
         String expected = this.existingUserMail;
         this.loginUser();
@@ -117,7 +117,7 @@ public class LoginTest {
 
         this.driver.findElement(page.getGoToLoginButton()).click();
 
-        assert this.driver.getCurrentUrl().equals(this.loginUrl);
+        assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
         String expected = this.existingUserMail;
         this.loginUser();
@@ -136,7 +136,8 @@ public class LoginTest {
                 .until(ExpectedConditions.elementToBeClickable(page.getGoToLoginButton()));
         this.driver.findElement(page.getGoToLoginButton()).click();
 
-        assert this.driver.getCurrentUrl().equals(this.loginUrl);
+        assertEquals(this.loginUrl, this.driver.getCurrentUrl());
+
         String expected = this.existingUserMail;
         this.loginUser();
         this.goToAccountPage();
@@ -152,7 +153,8 @@ public class LoginTest {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(page.getGoToAccountButton()));
         this.driver.findElement(page.getGoToAccountButton()).click();
-        assert this.driver.getCurrentUrl().equals(this.loginUrl);
+
+        assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
         this.loginUser();
         this.goToAccountPage();
@@ -161,8 +163,7 @@ public class LoginTest {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(loginUrl));
 
-        assertEquals(this.driver.getCurrentUrl(), loginUrl);
-
+        assertEquals(this.loginUrl, this.driver.getCurrentUrl());
     }
 
     @After
