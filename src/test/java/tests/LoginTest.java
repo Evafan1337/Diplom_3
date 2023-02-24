@@ -16,18 +16,17 @@ import static org.junit.Assert.assertEquals;
 
 public class LoginTest {
 
-    WebDriver driver;
-    RegisterPage page;
+    private WebDriver driver;
 
-    String existingUserLogin = "test_user_ershov";
-    String existingUserMail = "test_user_ershov@mail.ru";
-    String existingUserPassword = "test_user_ershov";
+    private String existingUserLogin = "test_user_ershov";
+    private String existingUserMail = "test_user_ershov@mail.ru";
+    private String existingUserPassword = "test_user_ershov";
 
-    String mainPageUrl = "https://stellarburgers.nomoreparties.site";
-    String registerPageUrl = "https://stellarburgers.nomoreparties.site/register";
-    String passwordRecoveryUrl = "https://stellarburgers.nomoreparties.site/forgot-password";
-    String loginUrl = "https://stellarburgers.nomoreparties.site/login";
-    String accountProfileUrl = "https://stellarburgers.nomoreparties.site/account/profile";
+    private String mainPageUrl = "https://stellarburgers.nomoreparties.site";
+    private String registerPageUrl = "https://stellarburgers.nomoreparties.site/register";
+    private String passwordRecoveryUrl = "https://stellarburgers.nomoreparties.site/forgot-password";
+    private String loginUrl = "https://stellarburgers.nomoreparties.site/login";
+    private String accountProfileUrl = "https://stellarburgers.nomoreparties.site/account/profile";
 
     public void loginUser() {
 

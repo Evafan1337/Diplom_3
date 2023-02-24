@@ -16,10 +16,10 @@ import static org.junit.Assert.assertEquals;
 
 public class RegisterTest {
 
-    WebDriver driver;
-    RegisterPage page;
-    String url = "https://stellarburgers.nomoreparties.site/register";
-    String succesRegisterRedirect = "https://stellarburgers.nomoreparties.site/login";
+    private WebDriver driver;
+    private RegisterPage page;
+    private String url = "https://stellarburgers.nomoreparties.site/register";
+    private String succesRegisterRedirect = "https://stellarburgers.nomoreparties.site/login";
 
     public String generateString() {
         int leftLimit = 97;
