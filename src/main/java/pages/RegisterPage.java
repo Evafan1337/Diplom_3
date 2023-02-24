@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class RegisterPage extends BasePage {
 
-    private WebDriver driver;
     private By nameInput = By.xpath("//*[contains(text(),'Имя')]/following-sibling::input");
     private By emailInput = By.xpath("//*[contains(text(),'Email')]/following-sibling::input");
     private By passwordInput = By.xpath("//*[contains(text(),'Пароль')]/following-sibling::input");

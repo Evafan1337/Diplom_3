@@ -28,8 +28,8 @@ public class LoginTest {
     private String loginUrl = "https://stellarburgers.nomoreparties.site/login";
     private String accountProfileUrl = "https://stellarburgers.nomoreparties.site/account/profile";
 
-    public void loginUser() {
 
+    public void loginUser() {
         LoginPage loginPage = new LoginPage();
         this.driver.findElement(loginPage.getEmailFieldInput()).sendKeys(this.existingUserMail);
         this.driver.findElement(loginPage.getPasswordFieldInput()).sendKeys(this.existingUserPassword);
@@ -68,10 +68,9 @@ public class LoginTest {
     @Test
     public void succesGoToLoginPageFromAccountBtn() {
         String expected = this.existingUserMail;
-
+        this.driver.get(mainPageUrl);
 
         MainPage page = new MainPage();
-        this.driver.get(mainPageUrl);
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(page.getGoToAccountButton()));
@@ -87,17 +86,17 @@ public class LoginTest {
 
     @Test
     public void succesGoToLoginPageFromGoToAccountBtn() throws Exception {
-        MainPage page = new MainPage();
+        String expected = this.existingUserMail;
         this.driver.get(mainPageUrl);
+
+        MainPage page = new MainPage();
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(page.getAccountButton()));
-
         this.driver.findElement(page.getAccountButton()).click();
 
         assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
-        String expected = this.existingUserMail;
         this.loginUser();
         this.goToAccountPage();
         String result = this.getCurrentUserLogin();
@@ -109,17 +108,17 @@ public class LoginTest {
 
     @Test
     public void succesGoToLoginPageFromRegister() {
-        RegisterPage page = new RegisterPage();
+        String expected = this.existingUserMail;
         this.driver.get(registerPageUrl);
+
+        RegisterPage page = new RegisterPage();
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(page.getGoToLoginButton()));
-
         this.driver.findElement(page.getGoToLoginButton()).click();
 
         assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
-        String expected = this.existingUserMail;
         this.loginUser();
         this.goToAccountPage();
         String result = this.getCurrentUserLogin();
@@ -129,8 +128,10 @@ public class LoginTest {
 
     @Test
     public void succesGoToLoginPageFromForgotPasswordPage() {
-        ForgotPasswordPage page = new ForgotPasswordPage();
+        String expected = this.existingUserMail;
         this.driver.get(passwordRecoveryUrl);
+
+        ForgotPasswordPage page = new ForgotPasswordPage();
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(page.getGoToLoginButton()));
@@ -138,7 +139,6 @@ public class LoginTest {
 
         assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
-        String expected = this.existingUserMail;
         this.loginUser();
         this.goToAccountPage();
         String result = this.getCurrentUserLogin();
