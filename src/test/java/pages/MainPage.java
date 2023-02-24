@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 
-public class MainPage extends BasePage{
+public class MainPage extends BasePage {
     private By goToAccountButton = By.xpath("//*[contains(text(),'Войти в аккаунт')]");
 
     private By bunsHeader = By.xpath("(//*[contains(@class,'tab_tab')])[1]");
@@ -11,13 +11,9 @@ public class MainPage extends BasePage{
     private By sauseHeader = By.xpath("(//*[contains(@class,'tab_tab')])[2]");
     private By sauseConstructorHeader = By.xpath("(//*[contains(text(),'Соусы')])[2]");
 
-    //private By fillsHeader = By.xpath("(//*[contains(text(),'Начинки')])[1]/ancestor::div[1]");
-//    private By fillsHeader = By.xpath("(//*[contains(text(),'Начинки')])");
     private By fillsHeader = By.xpath("(//*[contains(@class,'tab_tab')])[3]");
     private By fillsConstructorHeader = By.xpath("(//*[contains(text(),'Начинки')])[2]");
     private By feedPageBtn = By.xpath("(//*[contains(text(),'Лента Заказов')])");
-
-    //(//*[contains(@class,'tab_tab')])[1]
 
 
     public By getFeedPageBtn() {
@@ -32,7 +28,7 @@ public class MainPage extends BasePage{
         return sauseConstructorHeader;
     }
 
-    public By getFillsConstructorHeader(){
+    public By getFillsConstructorHeader() {
         return fillsConstructorHeader;
     }
 

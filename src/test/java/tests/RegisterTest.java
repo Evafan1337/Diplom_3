@@ -22,8 +22,8 @@ public class RegisterTest {
     String succesRegisterRedirect = "https://stellarburgers.nomoreparties.site/login";
 
     public String generateString() {
-        int leftLimit = 97; // letter 'a'
-        int rightLimit = 122; // letter 'z'
+        int leftLimit = 97;
+        int rightLimit = 122;
         int targetStringLength = 10;
         Random random = new Random();
 

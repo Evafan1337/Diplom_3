@@ -31,7 +31,6 @@ public class LoginTest {
 
     public void loginUser() {
 
-        //  Login and get loginValue
         LoginPage loginPage = new LoginPage();
         this.driver.findElement(loginPage.getEmailFieldInput()).sendKeys(this.existingUserMail);
         this.driver.findElement(loginPage.getPasswordFieldInput()).sendKeys(this.existingUserPassword);

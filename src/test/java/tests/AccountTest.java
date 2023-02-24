@@ -13,19 +13,16 @@ import pages.*;
 import static org.junit.Assert.assertEquals;
 
 
-//@RunWith(Parameterized.class)
 public class AccountTest {
 
     boolean loginParam;
     WebDriver driver;
 
-    //TO-DO: make DataClass static
     String existingUserLogin = "test_user_ershov";
     String existingUserMail = "test_user_ershov@mail.ru";
     String existingUserPassword = "test_user_ershov";
 
 
-    //TO-DO: make DataClass static
     String mainPageUrl = "https://stellarburgers.nomoreparties.site/";
     String registerPageUrl = "https://stellarburgers.nomoreparties.site/register";
     String passwordRecoveryUrl = "https://stellarburgers.nomoreparties.site/forgot-password";
@@ -45,7 +42,6 @@ public class AccountTest {
 
     public void loginUser() {
 
-        //  Login and get loginValue
         LoginPage loginPage = new LoginPage();
         this.driver.findElement(loginPage.getEmailFieldInput()).sendKeys(this.existingUserMail);
         this.driver.findElement(loginPage.getPasswordFieldInput()).sendKeys(this.existingUserPassword);
@@ -69,7 +65,6 @@ public class AccountTest {
         FeedPage feedPage = new FeedPage();
         this.driver.findElement(feedPage.getAccountButton()).click();
 
-        //Refactor
         String expected = this.accountProfileUrl;
 
         new WebDriverWait(driver, 3)
