@@ -1,6 +1,8 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,6 +31,7 @@ public class LoginTest {
     private String accountProfileUrl = "https://stellarburgers.nomoreparties.site/account/profile";
 
 
+    @Step("Авторизация пользователя")
     public void loginUser() {
         LoginPage loginPage = new LoginPage();
         this.driver.findElement(loginPage.getEmailFieldInput()).sendKeys(this.existingUserMail);
@@ -39,6 +42,7 @@ public class LoginTest {
                 .until(ExpectedConditions.urlMatches(mainPageUrl));
     }
 
+    @Step("Переход на страницу профиля")
     public void goToAccountPage() {
         MainPage page = new MainPage();
         this.driver.findElement(page.getAccountButton()).click();
@@ -66,6 +70,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу логина путем нажатия на кнопку 'Войти в аккаунт'")
     public void succesGoToLoginPageFromAccountBtn() {
         String expected = this.existingUserMail;
         this.driver.get(mainPageUrl);
@@ -85,6 +90,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу логина путем нажатия на кнопку 'Личный Кабинет'")
     public void succesGoToLoginPageFromGoToAccountBtn() throws Exception {
         String expected = this.existingUserMail;
         this.driver.get(mainPageUrl);
@@ -107,6 +113,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу логина со страницы регистрации")
     public void succesGoToLoginPageFromRegister() {
         String expected = this.existingUserMail;
         this.driver.get(registerPageUrl);
@@ -127,6 +134,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу логина со страницы восстановления пароля")
     public void succesGoToLoginPageFromForgotPasswordPage() {
         String expected = this.existingUserMail;
         this.driver.get(passwordRecoveryUrl);
@@ -146,6 +154,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Выход из профиля")
     public void succesLogout() {
         MainPage page = new MainPage();
         this.driver.get(mainPageUrl);

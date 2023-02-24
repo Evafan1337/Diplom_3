@@ -1,6 +1,8 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,6 +37,13 @@ public class RegisterTest {
         return generatedString;
     }
 
+    @Step("Заполнение формы регистрации")
+    public void passValuesInForm(String nameValue, String emailValue, String passwordValue){
+        driver.findElement(page.getNameInput()).sendKeys(nameValue);
+        driver.findElement(page.getEmailInput()).sendKeys(emailValue);
+        driver.findElement(page.getPasswordInput()).sendKeys(passwordValue);
+    }
+
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -44,6 +53,7 @@ public class RegisterTest {
     }
 
     @Test
+    @DisplayName("Успешная регистрация")
     public void successfulRegisterCheck() {
 
         String nameValue = this.generateString();
@@ -53,9 +63,7 @@ public class RegisterTest {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(page.getRegisterButton()));
 
-        driver.findElement(page.getNameInput()).sendKeys(nameValue);
-        driver.findElement(page.getEmailInput()).sendKeys(emailValue);
-        driver.findElement(page.getPasswordInput()).sendKeys(passwordValue);
+        this.passValuesInForm(nameValue, emailValue, passwordValue);
 
         driver.findElement(page.getRegisterButton()).click();
 
@@ -66,15 +74,14 @@ public class RegisterTest {
     }
 
     @Test
+    @DisplayName("Неуспешная регистрация с установкой короткого пароля")
     public void failRegisterWithShortPassword() {
 
         String nameValue = this.generateString();
         String emailValue = this.generateString() + "@mail.ru";
         String passwordValue = "111";
 
-        driver.findElement(page.getNameInput()).sendKeys(nameValue);
-        driver.findElement(page.getEmailInput()).sendKeys(emailValue);
-        driver.findElement(page.getPasswordInput()).sendKeys(passwordValue);
+        this.passValuesInForm(nameValue, emailValue, passwordValue);
 
         driver.findElement(page.getRegisterButton()).click();
 

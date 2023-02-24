@@ -1,6 +1,8 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,6 +41,7 @@ public class AccountTest {
         this.driver.manage().window().maximize();
     }
 
+    @Step("Авторизация пользователя")
     public void loginUser() {
 
         LoginPage loginPage = new LoginPage();
@@ -51,6 +54,7 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу профиля с ленты с авторизацией")
     public void goToAccountFromFeedWithLogin() {
         this.driver.get(loginUrl);
         this.loginUser();
@@ -73,6 +77,7 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу конструктора из профиля")
     public void goToConstructorFromProfile() {
         this.driver.get(loginUrl);
         this.loginUser();
@@ -90,6 +95,7 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу конструктора путем клику по логотипу")
     public void goToConstructorFromProfileViaLogo() {
         this.driver.get(loginUrl);
         this.loginUser();
@@ -107,6 +113,7 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу конструктора со страницы логина")
     public void goToConstructorFromLogin() {
         this.driver.get(loginUrl);
 
@@ -123,6 +130,7 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу профиля без авторизации")
     public void goToAccountFromFeedWithNoLogin() {
         this.driver.get(mainPageUrl);
 
@@ -144,6 +152,7 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу профиля со страницы регистрации")
     public void goToAccountFromRegister() {
 
         this.driver.get(registerPageUrl);
@@ -159,6 +168,7 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу профиля со страницы восстановления пароля")
     public void goToAccountFromForgotPasswordPage() {
         this.driver.get(forgotPasswordPage);
         ForgotPasswordPage page = new ForgotPasswordPage();
@@ -173,10 +183,10 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("Переход на страницу конструктора со страницы профиля")
     public void goToConstructorFromAccount() {
         this.driver.get(loginUrl);
         this.loginUser();
-
 
         MainPage mainPage = new MainPage();
         this.driver.findElement(mainPage.getAccountButton()).click();

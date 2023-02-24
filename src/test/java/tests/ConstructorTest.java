@@ -1,6 +1,8 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,6 +21,7 @@ public class ConstructorTest {
     private MainPage page;
     private String url = "https://stellarburgers.nomoreparties.site";
 
+    @Step("Клик по пункту конструктора")
     public void constructorClick(By elemLocator, By headerLocator) throws Exception {
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(this.driver.findElement(elemLocator)));
         this.driver.findElement(elemLocator).click();
@@ -37,6 +40,7 @@ public class ConstructorTest {
     }
 
     @Test
+    @DisplayName("Нажатие по пункту 'Соусы'")
     public void clickOnSauce() throws Exception {
         this.constructorClick(page.getSauseHeader(), page.getSauseConstructorHeader());
 
@@ -44,6 +48,7 @@ public class ConstructorTest {
     }
 
     @Test
+    @DisplayName("Нажатие по пункту 'Булки' после нажатия по пункту 'Соусы'")
     public void clickOnBuns() throws Exception {
 
         this.constructorClick(page.getSauseHeader(), page.getSauseConstructorHeader());
@@ -55,6 +60,7 @@ public class ConstructorTest {
     }
 
     @Test
+    @DisplayName("Нажатие по пункту 'Начинки'")
     public void clickOnFill() throws Exception {
         this.constructorClick(page.getFillsHeader(), page.getFillsConstructorHeader());
         assertEquals(true, this.driver.findElement(page.getFillsConstructorHeader()).isDisplayed());
