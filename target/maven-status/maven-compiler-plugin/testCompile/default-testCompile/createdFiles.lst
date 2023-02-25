@@ -1,0 +1,4 @@
+tests/RegisterTest.class
+tests/AccountTest.class
+tests/LoginTest.class
+tests/ConstructorTest.class
