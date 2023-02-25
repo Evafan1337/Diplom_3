@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MainPage;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ConstructorTest {
 
@@ -44,7 +44,7 @@ public class ConstructorTest {
     public void clickOnSauce() throws Exception {
         this.constructorClick(page.getSauseHeader(), page.getSauseConstructorHeader());
 
-        assertEquals(true, this.driver.findElement(page.getSauseConstructorHeader()).isDisplayed());
+        assertTrue(this.driver.findElement(page.getSauseConstructorHeader()).isDisplayed());
     }
 
     @Test
@@ -52,10 +52,10 @@ public class ConstructorTest {
     public void clickOnBuns() throws Exception {
 
         this.constructorClick(page.getSauseHeader(), page.getSauseConstructorHeader());
-        assertEquals(true, this.driver.findElement(page.getSauseConstructorHeader()).isDisplayed());
+        assertTrue(this.driver.findElement(page.getSauseConstructorHeader()).isDisplayed());
 
         this.constructorClick(page.getBunsHeader(), page.getBunsConstructorHeader());
-        assertEquals(true, this.driver.findElement(page.getBunsConstructorHeader()).isDisplayed());
+        assertTrue(this.driver.findElement(page.getBunsConstructorHeader()).isDisplayed());
 
     }
 
@@ -63,7 +63,7 @@ public class ConstructorTest {
     @DisplayName("Нажатие по пункту 'Начинки'")
     public void clickOnFill() throws Exception {
         this.constructorClick(page.getFillsHeader(), page.getFillsConstructorHeader());
-        assertEquals(true, this.driver.findElement(page.getFillsConstructorHeader()).isDisplayed());
+        assertTrue(this.driver.findElement(page.getFillsConstructorHeader()).isDisplayed());
     }
 
     @After

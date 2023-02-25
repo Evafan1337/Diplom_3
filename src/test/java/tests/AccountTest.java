@@ -6,7 +6,6 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,14 +20,11 @@ public class AccountTest {
 
     public WebDriver driver;
 
-    private String existingUserLogin = "test_user_ershov";
     private String existingUserMail = "test_user_ershov@mail.ru";
     private String existingUserPassword = "test_user_ershov";
 
-
     private String mainPageUrl = "https://stellarburgers.nomoreparties.site/";
     private String registerPageUrl = "https://stellarburgers.nomoreparties.site/register";
-    private String passwordRecoveryUrl = "https://stellarburgers.nomoreparties.site/forgot-password";
     private String loginUrl = "https://stellarburgers.nomoreparties.site/login";
     private String accountProfileUrl = "https://stellarburgers.nomoreparties.site/account/profile";
     private String accountProfileUrlNoLogin = "https://stellarburgers.nomoreparties.site/login";

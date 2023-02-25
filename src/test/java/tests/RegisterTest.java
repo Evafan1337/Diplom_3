@@ -39,7 +39,7 @@ public class RegisterTest {
     }
 
     @Step("Заполнение формы регистрации")
-    public void passValuesInForm(String nameValue, String emailValue, String passwordValue){
+    public void passValuesInForm(String nameValue, String emailValue, String passwordValue) {
         driver.findElement(page.getNameInput()).sendKeys(nameValue);
         driver.findElement(page.getEmailInput()).sendKeys(emailValue);
         driver.findElement(page.getPasswordInput()).sendKeys(passwordValue);

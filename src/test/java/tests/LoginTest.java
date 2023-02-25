@@ -20,7 +20,6 @@ public class LoginTest {
 
     private WebDriver driver;
 
-    private String existingUserLogin = "test_user_ershov";
     private String existingUserMail = "test_user_ershov@mail.ru";
     private String existingUserPassword = "test_user_ershov";
 
@@ -66,7 +65,7 @@ public class LoginTest {
     }
 
     @Step("Переход на страницу логина")
-    public void goToLoginPage(By locator){
+    public void goToLoginPage(By locator) {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(locator));
         this.driver.findElement(locator).click();

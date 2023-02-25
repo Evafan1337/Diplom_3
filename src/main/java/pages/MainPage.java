@@ -44,10 +44,6 @@ public class MainPage extends BasePage {
         return fillsHeader;
     }
 
-    public By getAccountButton() {
-        return accountButton;
-    }
-
     public By getGoToAccountButton() {
         return goToAccountButton;
     }

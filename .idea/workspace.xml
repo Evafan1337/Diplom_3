@@ -5,18 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e178488-2f37-4aad-9b8e-5462f6ad0526" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/FeedPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/ForgotPasswordPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/ProfilePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/AccountTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/ConstructorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/RegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ConstructorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ConstructorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-tests.AccountTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-tests.AccountTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-tests.ConstructorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-tests.ConstructorTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-tests.LoginTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-tests.LoginTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-tests.RegisterTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-tests.RegisterTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/tests.AccountTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/tests.AccountTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/tests.ConstructorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/tests.ConstructorTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/tests.LoginTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/tests.LoginTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/tests.RegisterTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/tests.RegisterTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/BasePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/FeedPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/ForgotPasswordPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/LoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/MainPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/ProfilePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/RegisterPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/AccountTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/AccountTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/ConstructorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/ConstructorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/LoginTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/LoginTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/RegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/RegisterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yandex_sprint_4-1.0-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +70,7 @@
     &quot;last_opened_file_path&quot;: &quot;/home/user1/Github/Diplom_3&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.RegisterTest">
+  <component name="RunManager" selected="JUnit.AccountTest">
     <configuration name="AccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yandex_sprint_4" />
       <extension name="coverage">
@@ -71,7 +86,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountTest.goToConstructorFromProfileViaLogo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AccountTest.goToConstructorFromAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yandex_sprint_4" />
       <extension name="coverage">
         <pattern>
@@ -81,7 +96,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.AccountTest" />
-      <option name="METHOD_NAME" value="goToConstructorFromProfileViaLogo" />
+      <option name="METHOD_NAME" value="goToConstructorFromAccount" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -117,7 +132,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegisterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest.succesGoToLoginPageFromAccountBtn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yandex_sprint_4" />
       <extension name="coverage">
         <pattern>
@@ -126,19 +141,20 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RegisterTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
+      <option name="METHOD_NAME" value="succesGoToLoginPageFromAccountBtn" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RegisterTest" />
-        <item itemvalue="JUnit.LoginTest" />
-        <item itemvalue="JUnit.ConstructorTest" />
         <item itemvalue="JUnit.AccountTest" />
-        <item itemvalue="JUnit.AccountTest.goToConstructorFromProfileViaLogo" />
+        <item itemvalue="JUnit.LoginTest" />
+        <item itemvalue="JUnit.LoginTest.succesGoToLoginPageFromAccountBtn" />
+        <item itemvalue="JUnit.AccountTest.goToConstructorFromAccount" />
+        <item itemvalue="JUnit.ConstructorTest" />
       </list>
     </recent_temporary>
   </component>

@@ -1,0 +1,8 @@
+utils/SeleniumHelper.class
+pages/ForgotPasswordPage.class
+pages/BasePage.class
+pages/ProfilePage.class
+pages/FeedPage.class
+pages/RegisterPage.class
+pages/LoginPage.class
+pages/MainPage.class
