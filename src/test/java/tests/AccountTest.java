@@ -6,18 +6,20 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.*;
+import utils.SeleniumHelper;
 
 import static org.junit.Assert.assertEquals;
 
 
 public class AccountTest {
 
-    private WebDriver driver;
+    public WebDriver driver;
 
     private String existingUserLogin = "test_user_ershov";
     private String existingUserMail = "test_user_ershov@mail.ru";
@@ -60,20 +62,20 @@ public class AccountTest {
         this.loginUser();
 
         MainPage mainPage = new MainPage();
-        this.driver.findElement(mainPage.getFeedPageBtn()).click();
+        SeleniumHelper.clickOnElem(this.driver, mainPage.getFeedPageBtn());
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(feedUrl));
 
         FeedPage feedPage = new FeedPage();
-        this.driver.findElement(feedPage.getAccountButton()).click();
+        SeleniumHelper.clickOnElem(this.driver, feedPage.getAccountButton());
 
         String expected = this.accountProfileUrl;
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(expected));
 
-        assertEquals(this.driver.getCurrentUrl(), expected);
+        assertEquals(expected, this.driver.getCurrentUrl());
     }
 
     @Test
@@ -83,15 +85,15 @@ public class AccountTest {
         this.loginUser();
 
         MainPage mainPage = new MainPage();
-        this.driver.findElement(mainPage.getAccountButton()).click();
+        SeleniumHelper.clickOnElem(this.driver, mainPage.getAccountButton());
 
         ProfilePage profilePage = new ProfilePage();
-        this.driver.findElement(profilePage.getConstructorButton()).click();
+        SeleniumHelper.clickOnElem(this.driver, profilePage.getConstructorButton());
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(mainPageUrl));
 
-        assertEquals(this.driver.getCurrentUrl(), mainPageUrl);
+        assertEquals(mainPageUrl, this.driver.getCurrentUrl());
     }
 
     @Test
@@ -101,15 +103,15 @@ public class AccountTest {
         this.loginUser();
 
         MainPage mainPage = new MainPage();
-        this.driver.findElement(mainPage.getAccountButton()).click();
+        SeleniumHelper.clickOnElem(this.driver, mainPage.getAccountButton());
 
         ProfilePage profilePage = new ProfilePage();
-        this.driver.findElement(profilePage.getLogoLink()).click();
+        SeleniumHelper.clickOnElem(this.driver, profilePage.getLogoLink());
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(mainPageUrl));
 
-        assertEquals(this.driver.getCurrentUrl(), mainPageUrl);
+        assertEquals(mainPageUrl, this.driver.getCurrentUrl());
     }
 
     @Test
@@ -118,15 +120,15 @@ public class AccountTest {
         this.driver.get(loginUrl);
 
         MainPage mainPage = new MainPage();
-        this.driver.findElement(mainPage.getAccountButton()).click();
+        SeleniumHelper.clickOnElem(this.driver, mainPage.getAccountButton());
 
         ProfilePage profilePage = new ProfilePage();
-        this.driver.findElement(profilePage.getConstructorButton()).click();
+        SeleniumHelper.clickOnElem(this.driver, profilePage.getConstructorButton());
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(mainPageUrl));
 
-        assertEquals(this.driver.getCurrentUrl(), mainPageUrl);
+        assertEquals(mainPageUrl, this.driver.getCurrentUrl());
     }
 
     @Test
@@ -135,20 +137,20 @@ public class AccountTest {
         this.driver.get(mainPageUrl);
 
         MainPage mainPage = new MainPage();
-        this.driver.findElement(mainPage.getFeedPageBtn()).click();
+        SeleniumHelper.clickOnElem(this.driver, mainPage.getFeedPageBtn());
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(feedUrl));
 
         FeedPage feedPage = new FeedPage();
-        this.driver.findElement(feedPage.getAccountButton()).click();
+        SeleniumHelper.clickOnElem(this.driver, feedPage.getAccountButton());
 
         String expected = this.accountProfileUrlNoLogin;
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(expected));
 
-        assertEquals(this.driver.getCurrentUrl(), expected);
+        assertEquals(expected, this.driver.getCurrentUrl());
     }
 
     @Test
@@ -158,13 +160,13 @@ public class AccountTest {
         this.driver.get(registerPageUrl);
         RegisterPage page = new RegisterPage();
 
-        this.driver.findElement(page.getAccountButton()).click();
+        SeleniumHelper.clickOnElem(this.driver, page.getAccountButton());
 
         String expected = this.accountProfileUrlNoLogin;
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(expected));
 
-        assertEquals(this.driver.getCurrentUrl(), expected);
+        assertEquals(expected, this.driver.getCurrentUrl());
     }
 
     @Test
@@ -173,13 +175,13 @@ public class AccountTest {
         this.driver.get(forgotPasswordPage);
         ForgotPasswordPage page = new ForgotPasswordPage();
 
-        this.driver.findElement(page.getAccountButton()).click();
+        SeleniumHelper.clickOnElem(this.driver, page.getAccountButton());
 
         String expected = this.accountProfileUrlNoLogin;
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(expected));
 
-        assertEquals(this.driver.getCurrentUrl(), expected);
+        assertEquals(expected, this.driver.getCurrentUrl());
     }
 
     @Test
@@ -189,15 +191,15 @@ public class AccountTest {
         this.loginUser();
 
         MainPage mainPage = new MainPage();
-        this.driver.findElement(mainPage.getAccountButton()).click();
+        SeleniumHelper.clickOnElem(this.driver, mainPage.getAccountButton());
 
         ProfilePage profilePage = new ProfilePage();
-        this.driver.findElement(profilePage.getConstructorButton()).click();
+        SeleniumHelper.clickOnElem(this.driver, profilePage.getConstructorButton());
 
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.urlMatches(mainPageUrl));
 
-        assertEquals(this.driver.getCurrentUrl(), mainPageUrl);
+        assertEquals(mainPageUrl, this.driver.getCurrentUrl());
     }
 
     @After

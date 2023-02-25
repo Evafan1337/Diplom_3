@@ -23,6 +23,7 @@ public class RegisterTest {
     private String url = "https://stellarburgers.nomoreparties.site/register";
     private String succesRegisterRedirect = "https://stellarburgers.nomoreparties.site/login";
 
+    @Step("Генерация тестовых данных")
     public String generateString() {
         int leftLimit = 97;
         int rightLimit = 122;

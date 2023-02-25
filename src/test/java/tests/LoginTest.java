@@ -50,6 +50,7 @@ public class LoginTest {
                 .until(ExpectedConditions.urlMatches(accountProfileUrl));
     }
 
+    @Step("Получение данных о текущем авторизованном пользователе")
     public String getCurrentUserLogin() {
 
         WebElement inputElem = this.driver.findElement(By.xpath("(//*[contains(text(),'Логин')])/following-sibling::input"));
@@ -57,10 +58,18 @@ public class LoginTest {
         return loginValue;
     }
 
+    @Step("Выход из профиля")
     public void logoutUser() {
         ProfilePage page = new ProfilePage();
         this.driver.findElement(page.getLogoutBtn()).click();
 
+    }
+
+    @Step("Переход на страницу логина")
+    public void goToLoginPage(By locator){
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.elementToBeClickable(locator));
+        this.driver.findElement(locator).click();
     }
 
     @Before
@@ -76,10 +85,8 @@ public class LoginTest {
         this.driver.get(mainPageUrl);
 
         MainPage page = new MainPage();
+        this.goToLoginPage(page.getGoToAccountButton());
 
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.elementToBeClickable(page.getGoToAccountButton()));
-        this.driver.findElement(page.getGoToAccountButton()).click();
         assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
         this.loginUser();
@@ -96,10 +103,7 @@ public class LoginTest {
         this.driver.get(mainPageUrl);
 
         MainPage page = new MainPage();
-
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.elementToBeClickable(page.getAccountButton()));
-        this.driver.findElement(page.getAccountButton()).click();
+        this.goToLoginPage(page.getAccountButton());
 
         assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
@@ -119,10 +123,7 @@ public class LoginTest {
         this.driver.get(registerPageUrl);
 
         RegisterPage page = new RegisterPage();
-
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.elementToBeClickable(page.getGoToLoginButton()));
-        this.driver.findElement(page.getGoToLoginButton()).click();
+        this.goToLoginPage(page.getGoToLoginButton());
 
         assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
@@ -140,10 +141,7 @@ public class LoginTest {
         this.driver.get(passwordRecoveryUrl);
 
         ForgotPasswordPage page = new ForgotPasswordPage();
-
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.elementToBeClickable(page.getGoToLoginButton()));
-        this.driver.findElement(page.getGoToLoginButton()).click();
+        this.goToLoginPage(page.getGoToLoginButton());
 
         assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
@@ -156,12 +154,10 @@ public class LoginTest {
     @Test
     @DisplayName("Выход из профиля")
     public void succesLogout() {
-        MainPage page = new MainPage();
         this.driver.get(mainPageUrl);
 
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.elementToBeClickable(page.getGoToAccountButton()));
-        this.driver.findElement(page.getGoToAccountButton()).click();
+        MainPage page = new MainPage();
+        this.goToLoginPage(page.getGoToAccountButton());
 
         assertEquals(this.loginUrl, this.driver.getCurrentUrl());
 
